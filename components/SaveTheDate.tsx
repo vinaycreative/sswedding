@@ -1,6 +1,6 @@
 "use client"
 import { motion } from "framer-motion"
-import { BookHeart, CalendarHeart, Images } from "lucide-react"
+import { BookHeart, CalendarHeart } from "lucide-react"
 import Image from "next/image"
 
 const SaveTheDate = () => {
