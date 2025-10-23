@@ -6,11 +6,13 @@ import Image from "next/image"
 const SaveTheDate = () => {
   return (
     <section className="relative w-full">
+      <div className="absolute top-0 left-0 w-full h-40 bg-gradient-to-b from-white to-transparent z-10 overflow-hidden" />
+      <div className="absolute -top-4 left-0 w-full h-14 rounded-full  bg-gradient-to-b from-white to-transparent z-10 overflow-hidden" />
       <div className="w-full overflow-hidden flex items-center justify-center">
         <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.3, delay: 1, ease: "linear" }}
+          transition={{ duration: 0.3, delay: 0.5, ease: "linear" }}
         >
           <Image
             src="/images/wedding-decoration-watercolor-event-curtains.jpg"
@@ -25,6 +27,7 @@ const SaveTheDate = () => {
             className="tex-sm text-[#858383] inline-block mb-1"
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 1, ease: "linear" }}
           >
             Save the Date
           </motion.span>

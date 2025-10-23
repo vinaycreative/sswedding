@@ -43,8 +43,6 @@ export default function Home() {
           <SaveTheDate />
           <CoupleSection />
           <VenueDetails />
-          <PhotoGallery />
-          <RSVPSection />
           <Footer />
         </motion.div>
       </AnimatePresence>

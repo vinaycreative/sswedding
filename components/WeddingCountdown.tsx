@@ -63,19 +63,19 @@ function WeddingCountdown() {
             exit={{ y: 40, opacity: 0 }}
             transition={{ duration: 0.5 }}
           >
-            <h1 className="text-2xl font-bold text-[#DA5373]">{formatNumber(value)}</h1>
+            <h1 className="text-2xl font-bold text-[#FE0058]">{formatNumber(value)}</h1>
           </motion.div>
         </AnimatePresence>
       </div>
-      <p className="text-sm font-medium text-[#DA5373] bg-white pt-1 -mt-1 z-10 px-2 rounded-full">
+      <p className="text-sm font-medium text-[#FE0058] bg-white pt-1 -mt-1 z-10 px-2 rounded-full">
         {label}
       </p>
     </motion.div>
   )
 
   return (
-    <section>
-      <div className="relative h-16 border-t border-b border-[#573A32] bg-[#FADAB8]/30 flex items-center justify-center">
+    <section className="px-4 -mt-4">
+      <div className="relative h-16 border-2 border-white bg-[#FE0058] flex items-center justify-center rounded-lg">
         <Image
           src="/images/flower.png"
           alt="decorative flowers"
@@ -84,7 +84,7 @@ function WeddingCountdown() {
           className="absolute -top-20 right-0 w-[140px]"
         />
         <motion.h1
-          className="font-semibold text-2xl text-[#9E4E3A]"
+          className="font-semibold text-2xl text-white"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3, ease: "easeInOut" }}
@@ -93,7 +93,7 @@ function WeddingCountdown() {
         </motion.h1>
       </div>
       <motion.div
-        className="flex items-center justify-center h-20  border-b border-[#573A32] divide-x-2"
+        className="flex items-center justify-center h-20  divide-x-2"
         // initial={{ opacity: 0, y: 100 }}
         // animate={{ opacity: 1, y: 0 }}
         // transition={{ delay: 0.3, ease: "easeInOut" }}
