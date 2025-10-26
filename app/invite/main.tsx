@@ -10,7 +10,7 @@ function Main({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 0)
+    }, 3200)
 
     return () => clearTimeout(timer)
   }, [])
