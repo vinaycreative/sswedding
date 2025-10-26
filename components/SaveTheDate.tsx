@@ -27,7 +27,7 @@ const SaveTheDate = () => {
             className="tex-sm text-[#858383] inline-block mb-1"
             initial={{ opacity: 0, y: -100 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: 1, ease: "linear" }}
+            transition={{ duration: 0.3, delay: 0.5, ease: "linear" }}
           >
             Save the Date
           </motion.span>
@@ -40,24 +40,24 @@ const SaveTheDate = () => {
             <CalendarHeart size={20} />{" "}
             <h1 className="font-semibold text-xl">November 22, 2025</h1>
           </motion.div>
-          <p
+          <motion.p
             className="text-sm text-[#656565] mt-2 text-center "
-            style={{ fontFamily: "Kaisei Decol" }}
-            data-aos="fade-up"
-            data-aos-duration="600"
+            initial={{ opacity: 0, y: 100 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3, delay: 0.5, ease: "linear" }}
           >
             Mark your calendars for a day filled <br /> with love, laughter, and memories!
-          </p>
+          </motion.p>
         </div>
       </div>
 
-      <div className="action flex flex-col gap-2 w-full px-4 pb-16 pt-2">
+      <div className="action flex flex-col gap-2 w-full px-4 mt-5">
         <motion.a
           className="text-[15px] flex items-center justify-center gap-2 border border-[#573A32] py-3 text-white bg-[#DA5373] w-full rounded-md font-semibold"
           href="/invite"
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          exit={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0 }}
           transition={{ duration: 0.6, ease: "easeInOut" }}
           whileHover={{ scale: 1.05 }}
         >

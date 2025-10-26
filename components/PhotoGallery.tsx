@@ -1,12 +1,12 @@
-"use client";
-import { AnimatePresence, motion } from "framer-motion";
-import { ChevronLeft, ChevronRight, X } from "lucide-react";
-import Image from "next/image";
-import { useState } from "react";
+"use client"
+import { AnimatePresence, motion } from "framer-motion"
+import { ChevronLeft, ChevronRight, X } from "lucide-react"
+import Image from "next/image"
+import { useState } from "react"
 
 function PhotoGallery() {
-  const [selectedImage, setSelectedImage] = useState<string | null>(null);
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [selectedImage, setSelectedImage] = useState<string | null>(null)
+  const [currentIndex, setCurrentIndex] = useState(0)
 
   const galleryImages = [
     "/images/vinay-and-jyo.jpg",
@@ -15,26 +15,24 @@ function PhotoGallery() {
     "/images/vj.jpeg",
     "/images/meme.jpg",
     "/images/venue.png",
-  ];
+  ]
 
   const openModal = (image: string, index: number) => {
-    setSelectedImage(image);
-    setCurrentIndex(index);
-  };
+    setSelectedImage(image)
+    setCurrentIndex(index)
+  }
 
   const closeModal = () => {
-    setSelectedImage(null);
-  };
+    setSelectedImage(null)
+  }
 
   const nextImage = () => {
-    setCurrentIndex((prev) => (prev + 1) % galleryImages.length);
-  };
+    setCurrentIndex((prev) => (prev + 1) % galleryImages.length)
+  }
 
   const prevImage = () => {
-    setCurrentIndex(
-      (prev) => (prev - 1 + galleryImages.length) % galleryImages.length,
-    );
-  };
+    setCurrentIndex((prev) => (prev - 1 + galleryImages.length) % galleryImages.length)
+  }
 
   return (
     <section className="py-16 px-4 bg-white">
@@ -45,16 +43,9 @@ function PhotoGallery() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="text-center mb-12"
         >
-          <h2
-            className="text-3xl font-bold text-[#9E4E3A] mb-4"
-            style={{ fontFamily: "Kaisei Decol" }}
-          >
-            Our Journey Together
-          </h2>
+          <h2 className="text-3xl font-bold text-[#9E4E3A] mb-4">Our Journey Together</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#DA5373] to-[#B83A5B] mx-auto rounded-full"></div>
-          <p className="text-[#656565] mt-4">
-            Moments captured, memories treasured
-          </p>
+          <p className="text-[#656565] mt-4">Moments captured, memories treasured</p>
         </motion.div>
 
         <div className="grid grid-cols-2 gap-4">
@@ -141,7 +132,7 @@ function PhotoGallery() {
         </AnimatePresence>
       </div>
     </section>
-  );
+  )
 }
 
-export default PhotoGallery;
+export default PhotoGallery

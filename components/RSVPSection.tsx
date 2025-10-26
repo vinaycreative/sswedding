@@ -1,7 +1,7 @@
-"use client";
-import { motion } from "framer-motion";
-import { CheckCircle, Heart, XCircle } from "lucide-react";
-import { useState } from "react";
+"use client"
+import { motion } from "framer-motion"
+import { CheckCircle, Heart, XCircle } from "lucide-react"
+import { useState } from "react"
 
 function RSVPSection() {
   const [formData, setFormData] = useState({
@@ -11,26 +11,24 @@ function RSVPSection() {
     guests: "1",
     message: "",
     attending: "",
-  });
-  const [isSubmitted, setIsSubmitted] = useState(false);
+  })
+  const [isSubmitted, setIsSubmitted] = useState(false)
 
   const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+    e.preventDefault()
     // Here you would typically send the data to your backend
-    console.log("RSVP Data:", formData);
-    setIsSubmitted(true);
-  };
+    console.log("RSVP Data:", formData)
+    setIsSubmitted(true)
+  }
 
   const handleChange = (
-    e: React.ChangeEvent<
-      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-    >,
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value,
-    });
-  };
+    })
+  }
 
   if (isSubmitted) {
     return (
@@ -42,12 +40,7 @@ function RSVPSection() {
             transition={{ duration: 0.6, ease: "easeInOut" }}
           >
             <CheckCircle className="w-20 h-20 text-[#DA5373] mx-auto mb-6" />
-            <h2
-              className="text-3xl font-bold text-[#9E4E3A] mb-4"
-              style={{ fontFamily: "Kaisei Decol" }}
-            >
-              Thank You!
-            </h2>
+            <h2 className="text-3xl font-bold text-[#9E4E3A] mb-4">Thank You!</h2>
             <p className="text-[#656565] mb-6">
               We've received your RSVP. We can't wait to celebrate with you!
             </p>
@@ -61,7 +54,7 @@ function RSVPSection() {
           </motion.div>
         </div>
       </section>
-    );
+    )
   }
 
   return (
@@ -73,12 +66,7 @@ function RSVPSection() {
           transition={{ duration: 0.6, ease: "easeInOut" }}
           className="text-center mb-8"
         >
-          <h2
-            className="text-3xl font-bold text-[#9E4E3A] mb-4"
-            style={{ fontFamily: "Kaisei Decol" }}
-          >
-            Will You Join Us?
-          </h2>
+          <h2 className="text-3xl font-bold text-[#9E4E3A] mb-4">Will You Join Us?</h2>
           <div className="w-24 h-1 bg-gradient-to-r from-[#DA5373] to-[#B83A5B] mx-auto rounded-full mb-4"></div>
           <p className="text-[#656565]">
             Please let us know if you'll be attending our special day
@@ -131,10 +119,7 @@ function RSVPSection() {
 
             {/* Name */}
             <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-[#9E4E3A] mb-1"
-              >
+              <label htmlFor="name" className="block text-sm font-medium text-[#9E4E3A] mb-1">
                 Full Name *
               </label>
               <input
@@ -151,10 +136,7 @@ function RSVPSection() {
 
             {/* Email */}
             <div>
-              <label
-                htmlFor="email"
-                className="block text-sm font-medium text-[#9E4E3A] mb-1"
-              >
+              <label htmlFor="email" className="block text-sm font-medium text-[#9E4E3A] mb-1">
                 Email *
               </label>
               <input
@@ -171,10 +153,7 @@ function RSVPSection() {
 
             {/* Phone */}
             <div>
-              <label
-                htmlFor="phone"
-                className="block text-sm font-medium text-[#9E4E3A] mb-1"
-              >
+              <label htmlFor="phone" className="block text-sm font-medium text-[#9E4E3A] mb-1">
                 Phone Number
               </label>
               <input
@@ -190,10 +169,7 @@ function RSVPSection() {
 
             {/* Number of Guests */}
             <div>
-              <label
-                htmlFor="guests"
-                className="block text-sm font-medium text-[#9E4E3A] mb-1"
-              >
+              <label htmlFor="guests" className="block text-sm font-medium text-[#9E4E3A] mb-1">
                 Number of Guests
               </label>
               <select
@@ -213,10 +189,7 @@ function RSVPSection() {
 
             {/* Message */}
             <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium text-[#9E4E3A] mb-1"
-              >
+              <label htmlFor="message" className="block text-sm font-medium text-[#9E4E3A] mb-1">
                 Special Message (Optional)
               </label>
               <textarea
@@ -244,7 +217,7 @@ function RSVPSection() {
         </motion.div>
       </div>
     </section>
-  );
+  )
 }
 
-export default RSVPSection;
+export default RSVPSection
