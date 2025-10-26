@@ -1,11 +1,6 @@
 import type { Metadata } from "next"
-import { Montserrat } from "next/font/google"
 import "./globals.css"
-
-const montserrat = Montserrat({
-  variable: "--font-montserrat",
-  subsets: ["latin"],
-})
+import { AOSInit } from "@/components/Aos"
 
 export const metadata: Metadata = {
   title: "Shubham & Shweta's Wedding",
@@ -15,8 +10,14 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Shubham & Shweta's Wedding",
-    description: "Shubham & Shweta's Wedding Invitation",
+    description:
+      "Join us on November 22, 2025, to celebrate the start of our forever. Capture the joy, share your moments, and revisit the memories that make our day unforgettable.",
     url: "https://shubhamandshweta.com",
+    images: [
+      {
+        url: "/images/og-image.png",
+      },
+    ],
   },
 }
 
@@ -27,7 +28,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.variable} antialiased`}>{children}</body>
+      <body className={`antialiased`}>
+        <AOSInit />
+        {children}
+      </body>
     </html>
   )
 }

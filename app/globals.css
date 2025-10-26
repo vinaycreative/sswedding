@@ -1,3 +1,5 @@
+@import url("https://api.fontshare.com/v2/css?f=zodiak@300,400,700,701,800,900,901&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Kaisei+Decol:wght@400;500;700&family=Kaushan+Script&display=swap");
 @import "tailwindcss";
 
 :root {
@@ -8,7 +10,7 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
+  --font-sans: var(--font-zodiak), var(--font-kaisei-decol);
   --font-mono: var(--font-geist-mono);
 }
 
@@ -22,7 +24,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: var(--font-geist-sans), Arial, Helvetica, sans-serif;
+  font-family: var(--font-zodiak), var(--font-kaisei-decol), serif;
 }
 
 /* Custom scrollbar */
@@ -95,4 +97,10 @@ html {
 /* Curved text effect */
 .curved-text {
   display: inline-block;
+}
+
+.bride-groom {
+  background: url("https://png.pngtree.com/png-clipart/20230817/original/pngtree-geometric-flower-floral-seamless-pattern-background-wedding-decoration-curtain-vector-png-image_10446073.png");
+  background-size: contain;
+  overflow: hidden; /* Hide overflow if necessary */
 }
