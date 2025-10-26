@@ -8,7 +8,12 @@ function VenueDetails() {
   const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(venueAddress)}`
 
   return (
-    <section className="relative py-16 px-4 bg-gradient-to-br from-[#FADAB8]/10 to-[#F5E6D3]/20">
+    <motion.section
+      className="relative py-16 px-4 bg-gradient-to-br from-[#FADAB8]/10 to-[#F5E6D3]/20"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 4.5, ease: "easeOut" }}
+    >
       {/* Top White Fade Gradient */}
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
 
@@ -17,8 +22,8 @@ function VenueDetails() {
       <div className="max-w-md mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 4.7, ease: "easeOut" }}
           className="text-center mb-12"
         >
           <h2 className="text-3xl font-bold text-[#9E4E3A] mb-4">Wedding Details</h2>
@@ -29,8 +34,8 @@ function VenueDetails() {
           {/* Venue Image */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, ease: "easeInOut" }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.8, delay: 5.1, ease: "easeOut" }}
             className="relative h-48 rounded-2xl overflow-hidden shadow-xl"
           >
             <Image src="/images/venue.png" alt="Wedding Venue" fill className="object-cover" />
@@ -46,8 +51,8 @@ function VenueDetails() {
           {/* Ceremony Details */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.2 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 5.5, ease: "easeOut" }}
             className="bg-white p-6 rounded-2xl shadow-lg border border-[#F5E6D3]/50"
           >
             <div className="flex items-center gap-3 mb-6">
@@ -91,8 +96,8 @@ function VenueDetails() {
           {/* Google Maps Directions */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.4 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 5.9, ease: "easeOut" }}
             className="space-y-4"
           >
             <h3 className="text-lg font-bold text-[#9E4E3A] text-center">Get Directions</h3>
@@ -127,8 +132,8 @@ function VenueDetails() {
           {/* Additional Info */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, ease: "easeInOut", delay: 0.6 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 6.3, ease: "easeOut" }}
             className="bg-gradient-to-br from-[#FADAB8]/30 to-[#F5E6D3]/50 p-6 rounded-2xl border border-[#F5E6D3]/50 text-center"
           >
             <Heart className="w-8 h-8 text-[#DA5373] mx-auto mb-3" />
@@ -139,7 +144,7 @@ function VenueDetails() {
           </motion.div>
         </div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

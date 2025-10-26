@@ -53,7 +53,7 @@ function WeddingCountdown() {
       transition={{ delay: 0.1, ease: "easeInOut" }}
       whileInView={{ opacity: 1, y: 0 }}
     >
-      <div className="h-10 overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#DA5373] to-[#B83A5B] rounded-lg shadow-lg">
+      <div className="h-8 overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#DA5373] to-[#B83A5B] rounded-lg shadow-lg">
         <AnimatePresence mode="wait">
           <motion.div
             key={label + value}
@@ -74,7 +74,12 @@ function WeddingCountdown() {
   )
 
   return (
-    <section className="px-4 -mt-4">
+    <motion.section
+      className="px-4 -mt-4"
+      initial={{ opacity: 0, y: 30 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: 0.5, ease: "easeOut" }}
+    >
       <div className="relative h-16 border-2 border-white bg-[#FE0058] flex items-center justify-center rounded-lg">
         <Image
           src="/images/flower.png"
@@ -85,26 +90,25 @@ function WeddingCountdown() {
         />
         <motion.h1
           className="font-semibold text-2xl text-white"
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.3, ease: "easeInOut" }}
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ delay: 0.8, duration: 0.5, ease: "easeOut" }}
         >
           {timeLeft.days} Days - To Forever 💕
         </motion.h1>
       </div>
       <motion.div
-        className="flex items-center justify-center h-20  divide-x-2"
-        // initial={{ opacity: 0, y: 100 }}
-        // animate={{ opacity: 1, y: 0 }}
-        // transition={{ delay: 0.3, ease: "easeInOut" }}
-        // whileInView={{ opacity: 1, y: 0 }}
+        className="flex items-center justify-center h-20 divide-x-2"
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 1, duration: 0.6, ease: "easeOut" }}
       >
         {renderTimeUnit(timeLeft.days, "Days")}
         {renderTimeUnit(timeLeft.hours, "Hours")}
         {renderTimeUnit(timeLeft.minutes, "Minutes")}
         {renderTimeUnit(timeLeft.seconds, "Seconds")}
       </motion.div>
-    </section>
+    </motion.section>
   )
 }
 

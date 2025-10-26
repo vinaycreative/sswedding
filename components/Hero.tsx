@@ -4,12 +4,17 @@ import Image from "next/image"
 
 function Hero() {
   return (
-    <section className="h-[600px] bg-gray-100 hero">
+    <motion.section
+      className="h-[600px] bg-gray-100 hero"
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+    >
       <motion.div
         className="w-full h-full relative"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 0.3, ease: "easeInOut" }}
+        initial={{ scale: 1.05, opacity: 0 }}
+        animate={{ scale: 1, opacity: 1 }}
+        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
       >
         <Image
           src="/images/Hero-3.jpg"
@@ -19,7 +24,7 @@ function Hero() {
           priority
         />
       </motion.div>
-    </section>
+    </motion.section>
   )
 }
 

@@ -5,7 +5,12 @@ import Image from "next/image"
 
 function CoupleSection() {
   return (
-    <section className="relative py-20 px-4 bg-gradient-to-br from-[#FADAB8]/15 to-[#F5E6D3]/25 overflow-hidden">
+    <motion.section
+      className="relative pt-16 pb-10 px-4 bg-gradient-to-br from-[#FADAB8]/15 to-[#F5E6D3]/25 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 2.6, ease: "easeOut" }}
+    >
       {/* Top White Fade Gradient */}
       <div className="absolute top-0 left-0 w-full h-20 bg-gradient-to-b from-white via-white/80 to-transparent z-10" />
 
@@ -15,8 +20,8 @@ function CoupleSection() {
       <div className="max-w-md mx-auto text-center relative z-20">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, ease: "easeInOut" }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 2.8, ease: "easeOut" }}
           className="mb-12"
         >
           <h2 className="text-3xl font-bold text-[#9E4E3A] mb-4">Together With Their Families</h2>
@@ -25,8 +30,8 @@ function CoupleSection() {
 
         <motion.div
           initial={{ opacity: 0, scale: 0.8 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, ease: "easeInOut" }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, delay: 3.2, ease: "easeOut" }}
           className="relative mb-12"
         >
           <div className="relative w-72 h-72 mx-auto">
@@ -75,8 +80,8 @@ function CoupleSection() {
 
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.3, ease: "easeInOut" }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 3.6, ease: "easeOut" }}
           className="space-y-8"
         >
           {/* Couple Names */}
@@ -128,8 +133,8 @@ function CoupleSection() {
           {/* Quote Section */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.5, ease: "easeInOut" }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 4, ease: "easeOut" }}
             className="bg-white/70 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/50"
           >
             <div className="flex items-center justify-center gap-2 mb-4">
@@ -144,7 +149,7 @@ function CoupleSection() {
           </motion.div>
         </motion.div>
       </div>
-    </section>
+    </motion.section>
   )
 }
 

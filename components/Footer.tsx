@@ -2,10 +2,16 @@
 import { motion } from "framer-motion"
 import { Heart } from "lucide-react"
 import Image from "next/image"
+import Link from "next/link"
 
 function Footer() {
   return (
-    <footer className="bg-gradient-to-br from-[#9E4E3A] to-[#7A3A2A] text-white px-4">
+    <motion.footer
+      className="bg-gradient-to-br from-[#9E4E3A] to-[#7A3A2A] text-white px-4"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8, delay: 7, ease: "easeOut" }}
+    >
       <div className="max-w-md mx-auto py-6">
         {/* Decorative Elements */}
         <div className="flex justify-center gap-4 py-4">
@@ -33,15 +39,15 @@ function Footer() {
         </div>
         <motion.div
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6, delay: 0.2, ease: "easeInOut" }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 7.2, ease: "easeOut" }}
           className="space-y-6"
         >
           {/* Wedding Date Reminder */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6, delay: 0.4, ease: "easeInOut" }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.6, delay: 7.4, ease: "easeOut" }}
             className="bg-white/10 backdrop-blur-sm rounded-2xl p-6 text-center"
           >
             <h4 className="text-lg font-semibold mb-2">Save the Date</h4>
@@ -77,20 +83,26 @@ function Footer() {
         {/* Copyright */}
         <motion.div
           initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.6, ease: "easeInOut" }}
-          className="text-center pt-6 border-t border-white/20"
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 7.6, ease: "easeOut" }}
+          className="text-center pt-6"
         >
           <p className="text-white/60 text-xs">
             Made with <Heart className="w-3 h-3 inline text-[#fe0058]" fill="#fe0058" /> by
-            Vinaycreatives
+            <Link
+              href="https://vinaycreative.vercel.app/"
+              target="_blank"
+              className="text-[#fe0058] font-semibold inline-block ml-1"
+            >
+              VinayCreative
+            </Link>
           </p>
           <p className="text-white/40 text-xs mt-2">
-            © 2025 Vinaycreatives. All rights reserved.
+            © 2025 VinayCreatives. All rights reserved.
           </p>
         </motion.div>
       </div>
-    </footer>
+    </motion.footer>
   )
 }
 
