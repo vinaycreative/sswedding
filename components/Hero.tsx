@@ -1,20 +1,20 @@
 "use client"
-import { motion } from "framer-motion"
 import Image from "next/image"
 
 function Hero() {
   return (
-    <motion.section
+    <section
       className="h-[600px] bg-gray-100 hero"
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.8, ease: "easeOut" }}
+      data-aos="fade-up"
+      data-aos-duration="800"
+      data-aos-easing="ease-out"
     >
-      <motion.div
+      <div
         className="w-full h-full relative"
-        initial={{ scale: 1.05, opacity: 0 }}
-        animate={{ scale: 1, opacity: 1 }}
-        transition={{ duration: 1, delay: 0.2, ease: "easeOut" }}
+        data-aos="zoom-out"
+        data-aos-duration="1000"
+        data-aos-delay="200"
+        data-aos-easing="ease-out"
       >
         <Image
           src="/images/Hero-3.jpg"
@@ -23,8 +23,8 @@ function Hero() {
           className="object-cover"
           priority
         />
-      </motion.div>
-    </motion.section>
+      </div>
+    </section>
   )
 }
 

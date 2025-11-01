@@ -1,5 +1,4 @@
 "use client"
-import { AnimatePresence, motion } from "framer-motion"
 import { useEffect, useState } from "react"
 import CoupleSection from "@/components/CoupleSection"
 import Footer from "@/components/Footer"
@@ -25,25 +24,16 @@ export default function Home() {
       {isLoading ? (
         <LoadingScreen key="loading" />
       ) : (
-        <main className="w-full h-full bg-white md:w-[400px] mx-auto" key="main">
-          <AnimatePresence mode="wait">
-            <motion.div
-              key="content"
-              className="w-full h-full"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              transition={{ duration: 0.5, ease: "easeInOut" }}
-            >
-              {/* <Header /> */}
-              <Hero />
-              <WeddingCountdown />
-              <SaveTheDate />
-              <CoupleSection />
-              <VenueDetails />
-              <Footer />
-            </motion.div>
-          </AnimatePresence>
+        <main className="w-full h-full bg-white md:w-[400px] mx-auto overflow-hidden" key="main">
+          <div className="w-full h-full">
+            {/* <Header /> */}
+            <Hero />
+            <WeddingCountdown />
+            <SaveTheDate />
+            <CoupleSection />
+            <VenueDetails />
+            <Footer />
+          </div>
         </main>
       )}
     </>

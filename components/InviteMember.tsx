@@ -10,13 +10,13 @@ function InviteMember() {
     <div className="flex flex-col relative items-center justify-center overflow-hidden mb-1 w-full">
       <SparklesText
         text={name}
-        className="text-center absolute font-semibold text-xl mt-3 text-[#573A32] capitalize"
+        className="text-center absolute font-semibold text-xl mt-3 text-[#ac1b46] capitalize"
         data-aos="zoom-out"
         data-aos-easing="ease-in-sine"
       />
       {name === "Heartfelt Guest!" && (
         <span
-          className="absolute top-1 z-10 px-4 bg-white rounded-lg border border-[#C49531] text-[#573A32]"
+          className="absolute top-1 z-10 px-4 bg-white rounded-lg border border-[#ac1b46] text-[#ac1b46]"
           data-aos="fade-up"
         >
           Our

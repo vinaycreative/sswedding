@@ -5,7 +5,7 @@ import { FadeText } from "@/components/ui/fade-text"
 
 function InvitationHero() {
   return (
-    <section className="relative h-[700px] overflow-hidden">
+    <section className="relative h-[680px] overflow-hidden">
       {/* Mandap Image */}
       <div className="absolute h-[400px] w-full inset-0 overflow-hidden">
         <div className="relative">
@@ -32,7 +32,7 @@ function InvitationHero() {
           height={1000}
         />
         <p
-          className="text-center text-base text-[#573A32]"
+          className="text-center text-base text-[#ac1b46]"
           data-aos="zoom-in"
           data-aos-easing="ease-in-sine"
         >
@@ -42,7 +42,7 @@ function InvitationHero() {
           <InviteMember />
         </Suspense>
         <FadeText
-          className="text-sm text-[#535220]"
+          className="text-sm text-[#ac1b46]"
           direction="up"
           framerProps={{
             show: { transition: { delay: 0.2 } },
@@ -50,9 +50,9 @@ function InvitationHero() {
           text="To our wedding"
         />
 
-        <div className="w-[280px] text-center text-base text-[#535220] font-medium leading-6">
+        <div className="w-[280px] text-center text-base text-[#ac1b46] font-medium leading-6">
           <FadeText
-            className="text-base text-[#535220]k"
+            className="text-[15px] text-[#535220]k"
             direction="up"
             framerProps={{
               show: { transition: { delay: 0.4 } },
@@ -61,11 +61,11 @@ function InvitationHero() {
           />
 
           <div
-            className="bg-yellow-50 h-[78px] overflow-hidden py-3 border border-yellow-300 rounded-md mt-2 mb-3"
+            className="bg-pink-50 h-[78px] overflow-hidden py-3 border border-[#ac1b46] rounded-md mt-2 mb-3"
             data-aos="flip-up"
           >
             <FadeText
-              className="text-base font-semibold text-[#573A32]"
+              className="text-base font-semibold text-[#ac1b46]"
               direction="up"
               framerProps={{
                 show: { transition: { delay: 1 } },
@@ -73,7 +73,7 @@ function InvitationHero() {
               text="November 22, Saturday, 2025"
             />
             <FadeText
-              className="font-bold text-[#535220] text-sm mb-2"
+              className="font-bold text-[#ac1b46] text-sm mb-2"
               direction="down"
               framerProps={{
                 show: { transition: { delay: 1 } },
@@ -84,7 +84,7 @@ function InvitationHero() {
 
           <div className="mt-3">
             <FadeText
-              className="text-base text-[#535220]"
+              className="text-base text-[#ac1b46]"
               direction="up"
               framerProps={{
                 show: { transition: { delay: 0.4 } },

@@ -1,5 +1,6 @@
 "use client"
-import { MapPin } from "lucide-react"
+import { motion } from "framer-motion"
+import { ExternalLink, Heart, MapPin, Navigation } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { AOSInit } from "@/components/Aos"
@@ -27,20 +28,20 @@ const InvitePage = () => {
         <div className="relative flex flex-col items-center justify-center overflow-hidden z-10">
           <div className="overflow-hidden">
             <Image
-              src="/images/name-decoration.png"
+              src="./images/hearts.svg"
               alt="border-line"
-              className="w-1/2 mx-auto"
+              className="w-20 mx-auto"
               data-aos="zoom-in"
               width={1000}
               height={1000}
             />
           </div>
           <div
-            className="absolute flex items-center justify-center gap-3 text-4xl font-semibold"
-            style={{ fontFamily: "Kaushan Script" }}
+            className="flex items-center justify-center gap-3 text-2xl font-semibold"
+            style={{ fontFamily: "Momo Trust Display" }}
           >
             <h1
-              className="text-[#AA8D56]"
+              className="text-[#ac1b46]"
               data-aos="fade-down"
               data-aos-easing="ease-in-back"
               data-aos-offset="0"
@@ -48,7 +49,7 @@ const InvitePage = () => {
               Shubham
             </h1>
             <span
-              className="text-[#E1A40F] inline-block"
+              className="text-[#ac1b46] inline-block"
               data-aos="zoom-in"
               data-aos-easing="ease-in-back"
               data-aos-offset="0"
@@ -92,30 +93,97 @@ const InvitePage = () => {
             Venue
           </p>
           <h2
-            className="text-center text-lg font-bold w-[60%] mx-auto text-[#573A32] mb-2 text-wrap"
+            className="text-center text-2xl font-bold w-[80%] mx-auto text-[#573A32] text-wrap"
             data-aos="zoom-in"
             data-aos-easing="ease-in-sine"
           >
             Sushila Mangal Karyalaya & Lawns, Limb Phata, <br />{" "}
-            <span className="text-xs">Talegaon Dabhade - 410507</span>
+            <span className="text-xs font-medium">Talegaon Dabhade - 410507</span>
           </h2>
 
-          <Link
-            className="flex items-center text-sm border border-yellow-800 text-white hover:bg-yellow-900 hover:text-white bg-yellow-700 px-4 rounded-sm py-2 gap-2 transition-all"
-            data-aos="fade-up"
-            href="https://www.google.com/maps/search/?api=1&query=Sushila%20Mangal%20Karyalaya%20%26%20Lawns%2C%20Talegaon%20Dabhade"
-            target="_blank" // Opens the link in a new tab
-            rel="noopener noreferrer"
-          >
-            <MapPin size={14} /> Get Directions
-          </Link>
-          <p className="text-sm text-center text-[#974630] font-extrabold" data-aos="fade-up">
-            Vitthal | Vinay
-          </p>
-          <p className="text-sm text-center text-[#573A32] -mt-2" data-aos="fade-up">
-            <Link href="tel:7499162533">7499162533</Link> |{" "}
-            <Link href="tel:9764796379">9764796379</Link>
-          </p>
+          <div className="w-full relative z-20 px-10 mt-2">
+            {/* Google Maps Directions */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3, ease: "easeOut" }}
+              className="space-y-4"
+            >
+              <h3 className="text-lg font-bold text-[#9E4E3A] text-center">Get Directions</h3>
+
+              <motion.a
+                href="https://www.google.com/maps/search/?api=1&query=Sushila%20Mangal%20Karyalaya%20%26%20Lawns%2C%20Talegaon%20Dabhade"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 bg-gradient-to-r from-[#DA5373] to-[#B83A5B] text-white py-4 px-6 rounded-xl shadow-lg font-semibold transition-all duration-300 hover:shadow-xl"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Navigation className="w-5 h-5" />
+                <span>Open in Google Maps</span>
+                <ExternalLink className="w-4 h-4" />
+              </motion.a>
+
+              <motion.a
+                href={
+                  "https://www.google.com/maps/search/?api=1&query=Sushila%20Mangal%20Karyalaya%20%26%20Lawns%2C%20Talegaon%20Dabhade"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-3 border-2 border-[#DA5373] text-[#DA5373] py-4 px-6 rounded-xl font-semibold transition-all duration-300 hover:bg-[#DA5373] hover:text-white"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <MapPin className="w-5 h-5" />
+                <span>Open in Apple Maps</span>
+                <ExternalLink className="w-4 h-4" />
+              </motion.a>
+            </motion.div>
+            <div className="py-4">
+              <h2 className="text-lg font-bold text-[#9E4E3A] text-center">Contact Us</h2>
+              <div
+                className="grid grid-cols-2 gap-2 text-sm text-center text-[#573A32] mt-2"
+                data-aos="fade-up"
+              >
+                <Link
+                  href="tel:7499162533"
+                  className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
+                >
+                  <span className="text-xs font-bold text-pink-500">
+                    Vitthal Bhadre <br />
+                  </span>
+                  7499162533
+                </Link>
+                <Link
+                  href="tel:9764796379"
+                  className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
+                >
+                  <span className="text-xs font-bold text-pink-500">
+                    Vinay Bhadre <br />
+                  </span>
+                  9764796379
+                </Link>
+                <Link
+                  href="tel:7499162533"
+                  className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-pink-600"
+                >
+                  <span className="text-xs font-bold text-blue-500">
+                    Sandeep Kadam <br />
+                  </span>
+                  9130307856
+                </Link>{" "}
+                <Link
+                  href="tel:9764796379"
+                  className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
+                >
+                  <span className="text-xs font-bold text-blue-500">
+                    Shriram Kadam <br />
+                  </span>
+                  9527434191
+                </Link>
+              </div>
+            </div>
+          </div>
           <p
             className="text-xs text-center text-gray-500 mt-1"
             data-aos="fade-up"
@@ -125,6 +193,7 @@ const InvitePage = () => {
             to enjoy and share the joy!
           </p>
         </div>
+
         <div
           className="px-6 mt-16 flex flex-col bg-white items-center justify-center"
           data-aos="flip-up"
@@ -143,6 +212,19 @@ const InvitePage = () => {
           />
         </div>
       </section>
+      <footer className="text-center flex flex-col items-center justify-center relative z-10">
+        <p className="text-gray-800 text-xs">
+          Made with <Heart className="w-3 h-3 inline text-[#fe0058]" fill="#fe0058" /> by
+          <Link
+            href="https://vinaycreative.com"
+            target="_blank"
+            className="text-[#fe0058] font-semibold inline-block ml-1"
+          >
+            VinayCreative
+          </Link>
+        </p>
+        <p className="text-white/40 text-xs mt-2">© 2025 VinayCreatives. All rights reserved.</p>
+      </footer>
     </>
   )
 }
