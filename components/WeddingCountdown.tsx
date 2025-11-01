@@ -40,10 +40,6 @@ function WeddingCountdown() {
     return () => clearInterval(timer) // Cleanup timer on component unmount
   }, [calculateTimeLeft])
 
-  const formatNumber = (value: number): string => {
-    return value.toString().padStart(2, "0") // Ensure 2-digit format
-  }
-
   const renderTimeUnit = (value: number, label: string) => (
     <div className="flex items-center flex-col relative overflow-hidden min-w-[60px] px-2">
       <div className="h-8 overflow-hidden flex items-center justify-center bg-gradient-to-br from-[#DA5373] to-[#B83A5B] rounded-lg shadow-lg">

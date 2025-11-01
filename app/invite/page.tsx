@@ -164,7 +164,7 @@ const InvitePage = () => {
                   9764796379
                 </Link>
                 <Link
-                  href="tel:7499162533"
+                  href="tel:9130307856"
                   className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-pink-600"
                 >
                   <span className="text-xs font-bold text-blue-500">
@@ -173,7 +173,16 @@ const InvitePage = () => {
                   9130307856
                 </Link>{" "}
                 <Link
-                  href="tel:9764796379"
+                  href="tel:9730296417"
+                  className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
+                >
+                  <span className="text-xs font-bold text-blue-500">
+                    Shubham Kadam <br />
+                  </span>
+                  9730296417
+                </Link>
+                <Link
+                  href="tel:9527434191"
                   className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
                 >
                   <span className="text-xs font-bold text-blue-500">
