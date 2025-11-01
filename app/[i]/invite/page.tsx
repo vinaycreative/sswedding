@@ -3,20 +3,23 @@ import { motion } from "framer-motion"
 import { ExternalLink, Heart, MapPin, Navigation } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
+import { useParams } from "next/navigation"
 import { AOSInit } from "@/components/Aos"
 import Divider from "@/components/Divider"
 import InvitationHero from "@/components/InvitationHero"
 import Main from "./main"
 
 function page() {
+  const { i } = useParams()
+
   return (
     <Main>
-      <InvitePage />
+      <InvitePage i={i as string} />
     </Main>
   )
 }
 
-const InvitePage = () => {
+const InvitePage = ({ i }: { i: string }) => {
   return (
     <>
       <AOSInit />
@@ -26,9 +29,9 @@ const InvitePage = () => {
         <div className="bg-gradient-to-t from-[rgb(255_255_255)_24%] to-transparent absolute inset-0 top-0 z-10"></div>
         {/* <Divider className="mb-10" /> */}
         <div className="relative flex flex-col items-center justify-center overflow-hidden z-10">
-          <div className="overflow-hidden">
+          <div className="overflow-hidden mb-6">
             <Image
-              src="./images/hearts.svg"
+              src="/images/hearts.svg"
               alt="border-line"
               className="w-20 mx-auto"
               data-aos="zoom-in"
@@ -145,56 +148,64 @@ const InvitePage = () => {
                 className="grid grid-cols-2 gap-2 text-sm text-center text-[#573A32] mt-2"
                 data-aos="fade-up"
               >
-                <Link
-                  href="tel:7499162533"
-                  className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
-                >
-                  <span className="text-xs font-bold text-pink-500">
-                    Vitthal Bhadre <br />
-                  </span>
-                  7499162533
-                </Link>
-                <Link
-                  href="tel:9764796379"
-                  className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
-                >
-                  <span className="text-xs font-bold text-pink-500">
-                    Vinay Bhadre <br />
-                  </span>
-                  9764796379
-                </Link>
-                <Link
-                  href="tel:9130307856"
-                  className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-pink-600"
-                >
-                  <span className="text-xs font-bold text-blue-500">
-                    Sandeep Kadam <br />
-                  </span>
-                  9130307856
-                </Link>{" "}
-                <Link
-                  href="tel:9730296417"
-                  className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
-                >
-                  <span className="text-xs font-bold text-blue-500">
-                    Shubham Kadam <br />
-                  </span>
-                  9730296417
-                </Link>
-                <Link
-                  href="tel:9527434191"
-                  className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
-                >
-                  <span className="text-xs font-bold text-blue-500">
-                    Shriram Kadam <br />
-                  </span>
-                  9527434191
-                </Link>
+                {i === "b" && (
+                  <>
+                    <Link
+                      href="tel:7499162533"
+                      className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
+                    >
+                      <span className="text-xs font-bold text-pink-500">
+                        Vitthal Bhadre <br />
+                      </span>
+                      7499162533
+                    </Link>
+                    <Link
+                      href="tel:9764796379"
+                      className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
+                    >
+                      <span className="text-xs font-bold text-pink-500">
+                        Vinay Bhadre <br />
+                      </span>
+                      9764796379
+                    </Link>
+                  </>
+                )}
+                {i === "g" && (
+                  <>
+                    <Link
+                      href="tel:9130307856"
+                      className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-pink-600"
+                    >
+                      <span className="text-xs font-bold text-blue-500">
+                        Sandeep Kadam <br />
+                      </span>
+                      9130307856
+                    </Link>{" "}
+                    <Link
+                      href="tel:9730296417"
+                      className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
+                    >
+                      <span className="text-xs font-bold text-blue-500">
+                        Shubham Kadam <br />
+                      </span>
+                      9730296417
+                    </Link>
+                    <Link
+                      href="tel:9527434191"
+                      className=" col-span-2 px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
+                    >
+                      <span className="text-xs font-bold text-blue-500">
+                        Shriram Kadam <br />
+                      </span>
+                      9527434191
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
           <p
-            className="text-xs text-center text-gray-500 mt-1"
+            className="text-xs text-center text-gray-500 mt-1 mb-6"
             data-aos="fade-up"
             data-aos-delay="300"
           >

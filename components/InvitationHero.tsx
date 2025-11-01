@@ -24,7 +24,7 @@ function InvitationHero() {
 
       <div className="relative mt-48 z-[40] flex flex-col justify-center items-center gap-2">
         <Image
-          src="./images/hearts.svg"
+          src="/images/hearts.svg"
           alt="hearts"
           className="w-8 mb-2"
           data-aos="fade-down"
