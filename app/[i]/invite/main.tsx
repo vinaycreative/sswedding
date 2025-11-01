@@ -5,12 +5,12 @@ import { useEffect, useState } from "react"
 import InvitationLoading from "@/components/InvitationLoading"
 
 function Main({ children }: { children: React.ReactNode }) {
-  const [isLoading, setIsLoading] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 0)
+    }, 3200)
 
     return () => clearTimeout(timer)
   }, [])
