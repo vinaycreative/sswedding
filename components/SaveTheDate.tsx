@@ -32,15 +32,13 @@ const SaveTheDate = () => {
       </div>
 
       {/* <div className="action flex flex-col gap-2 w-full px-4 mt-5">
-        <motion.a
+        <Link
           className="text-[15px] flex items-center justify-center gap-2 border border-[#573A32] py-3 text-white bg-[#DA5373] w-full rounded-md font-semibold"
           href="/invite"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.98 }}
         >
           <BookHeart size={20} />
           View Invitation
-        </motion.a>
+        </Link>
       </div> */}
     </section>
   )

@@ -7,6 +7,7 @@ import { useParams } from "next/navigation"
 import { AOSInit } from "@/components/Aos"
 import Divider from "@/components/Divider"
 import InvitationHero from "@/components/InvitationHero"
+import WeddingCountdown from "@/components/WeddingCountdown"
 import Main from "./main"
 
 function page() {
@@ -40,7 +41,7 @@ const InvitePage = ({ i }: { i: string }) => {
             />
           </div>
           <div
-            className="flex items-center justify-center gap-3 text-2xl font-semibold"
+            className="flex items-center justify-center gap-3 text-3xl font-semibold"
             style={{ fontFamily: "Momo Trust Display" }}
           >
             <h1
@@ -85,9 +86,10 @@ const InvitePage = ({ i }: { i: string }) => {
           <div className="h-[30%] w-full bg-gradient-to-t from-white to-transparent absolute right-0 -bottom-2 left-0 z-10"></div>
         </div>
 
-        <Divider className="mt-10" />
+        <WeddingCountdown />
       </section>
-      <section className="pt-16 pb-20 flex flex-col items-center justify-center">
+      <Divider />
+      <section className="pt-10 pb-20 flex flex-col items-center justify-center">
         <div className="flex flex-col justify-center items-center gap-3 w-[100%] mx-auto">
           <p
             className="text-sm  text-center border bg-[#573A32] text-white px-3 py-1 rounded-md"
@@ -174,9 +176,9 @@ const InvitePage = ({ i }: { i: string }) => {
                   <>
                     <Link
                       href="tel:9130307856"
-                      className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-pink-600"
+                      className="px-4 py-1 cursor-pointer rounded-md border border-blue-500 bg-blue-50 text-blue-500 hover:text-blue-600"
                     >
-                      <span className="text-xs font-bold text-blue-500">
+                      <span className="text-xs font-bold">
                         Sandeep Kadam <br />
                       </span>
                       9130307856

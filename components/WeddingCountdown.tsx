@@ -2,6 +2,7 @@
 import NumberFlow from "@number-flow/react"
 import moment from "moment-timezone"
 import { useCallback, useEffect, useState } from "react"
+import SparklesText from "@/components/ui/sparkles-text"
 
 function WeddingCountdown() {
   const [timeLeft, setTimeLeft] = useState({
@@ -10,9 +11,10 @@ function WeddingCountdown() {
     minutes: 0,
     seconds: 0,
   })
+  const [isWeddingDay, setIsWeddingDay] = useState(false)
 
   const calculateTimeLeft = useCallback(() => {
-    const weddingDate = moment.tz("2025-11-22", "Asia/Kolkata") // Wedding time in IST
+    const weddingDate = moment.tz("2025-11-22 18:00", "Asia/Kolkata") // Wedding time: Nov 22, 2025 at 6:00 PM IST
     const now = moment.tz("Asia/Kolkata") // Current time in IST
 
     const difference = weddingDate.diff(now) // Get difference in milliseconds
@@ -26,8 +28,10 @@ function WeddingCountdown() {
         minutes: duration.minutes(),
         seconds: duration.seconds(),
       })
+      setIsWeddingDay(false)
     } else {
       setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 })
+      setIsWeddingDay(true)
     }
   }, [])
 
@@ -55,16 +59,37 @@ function WeddingCountdown() {
     </div>
   )
 
+  // Show celebratory message when wedding day arrives
+  if (isWeddingDay) {
+    return (
+      <section className="px-4 -mt-4 relative z-10" data-aos="fade-up" data-aos-easing="ease-out">
+        <div className="relative py-4 border-2 border-white bg-gradient-to-br from-[#FE0058] to-[#DA5373] flex items-center justify-center rounded-lg shadow-xl">
+          <div className="text-center">
+            {/* <p className="text-lg text-white/90 font-medium mt-2">The wait is over!</p> */}
+            <SparklesText
+              text="Today we begin forever ❤️"
+              className="text-2xl text-white mb-2"
+              colors={{ first: "#FFFFFF", second: "#FFE4E1" }}
+              sparklesCount={15}
+            />
+          </div>
+        </div>
+        {/* <div
+          className="flex items-center justify-center h-20 mt-4"
+          data-aos="zoom-in"
+          data-aos-easing="ease-out"
+        >
+          <div className="bg-gradient-to-br from-[#FE0058] to-[#DA5373] rounded-xl px-8 py-4 shadow-lg">
+            <p className="text-white font-bold text-xl text-center">Celebrating Now! 🎊</p>
+          </div>
+        </div> */}
+      </section>
+    )
+  }
+
   return (
-    <section className="px-4 -mt-4" data-aos="fade-up" data-aos-easing="ease-out">
+    <section className="px-4 -mt-4 relative z-10" data-aos="fade-up" data-aos-easing="ease-out">
       <div className="relative h-16 border-2 border-white bg-[#FE0058] flex items-center justify-center rounded-lg">
-        {/* <Image
-          src="/images/flower.png"
-          alt="decorative flowers"
-          width={140}
-          height={140}
-          className="absolute -top-20 right-0 w-[140px]"
-        /> */}
         <h1
           className="font-semibold text-2xl text-white"
           data-aos="zoom-in"

@@ -1,6 +1,5 @@
 "use client"
 import { motion } from "framer-motion"
-import React from "react"
 
 function Divider({ ...rest }: any) {
   return (
@@ -8,7 +7,7 @@ function Divider({ ...rest }: any) {
       <motion.img
         src="/images/divider-line.png"
         alt="border-line"
-        className="relative z-10"
+        className="relative z-10 mt-7"
         initial="hidden"
         whileInView="visible"
         transition={{ duration: 1.5, ease: "easeInOut" }}
