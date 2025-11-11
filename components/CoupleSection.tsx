@@ -63,21 +63,6 @@ function CoupleSection() {
           <div className="flex items-center justify-center gap-6">
             <div
               className="text-center group transition-transform duration-200 hover:scale-105"
-              data-aos="flip-up"
-              data-aos-duration="600"
-              data-aos-easing="ease-out"
-            >
-              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/50">
-                <h3 className="text-2xl font-bold text-[#9E4E3A] mb-2">Shubham</h3>
-                <p className="text-sm text-[#656565] leading-relaxed">
-                  Son of <br />
-                  Mr. & Mrs. Kadam
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="text-center group transition-transform duration-200 hover:scale-105"
               data-aos="flip-down"
               data-aos-duration="600"
               data-aos-easing="ease-out"
@@ -87,6 +72,20 @@ function CoupleSection() {
                 <p className="text-sm text-[#656565] leading-relaxed">
                   Daughter of <br />
                   Mr. & Mrs. Bhadre
+                </p>
+              </div>
+            </div>
+            <div
+              className="text-center group transition-transform duration-200 hover:scale-105"
+              data-aos="flip-up"
+              data-aos-duration="600"
+              data-aos-easing="ease-out"
+            >
+              <div className="bg-white/60 backdrop-blur-sm rounded-2xl p-4 shadow-lg border border-white/50">
+                <h3 className="text-2xl font-bold text-[#9E4E3A] mb-2">Shubham</h3>
+                <p className="text-sm text-[#656565] leading-relaxed">
+                  Son of <br />
+                  Mr. & Mrs. Kadam
                 </p>
               </div>
             </div>

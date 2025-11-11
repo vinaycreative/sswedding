@@ -40,35 +40,69 @@ const InvitePage = ({ i }: { i: string }) => {
               height={1000}
             />
           </div>
-          <div
-            className="flex items-center justify-center gap-3 text-3xl font-semibold"
-            style={{ fontFamily: "Momo Trust Display" }}
-          >
-            <h1
-              className="text-[#ac1b46]"
-              data-aos="fade-down"
-              data-aos-easing="ease-in-back"
-              data-aos-offset="0"
+          {i === "b" && (
+            <div
+              className="flex items-center justify-center gap-3 text-3xl font-semibold"
+              style={{ fontFamily: "Momo Trust Display" }}
             >
-              Shubham
-            </h1>
-            <span
-              className="text-[#ac1b46] inline-block"
-              data-aos="zoom-in"
-              data-aos-easing="ease-in-back"
-              data-aos-offset="0"
+              <h1
+                className="text-[#573A32]"
+                data-aos="fade-up"
+                data-aos-easing="ease-in-back"
+                data-aos-offset="0"
+              >
+                Shweta
+              </h1>
+              <span
+                className="text-[#ac1b46] inline-block"
+                data-aos="zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-offset="0"
+              >
+                &
+              </span>
+              <h1
+                className="text-[#ac1b46]"
+                data-aos="fade-down"
+                data-aos-easing="ease-in-back"
+                data-aos-offset="0"
+              >
+                Shubham
+              </h1>
+            </div>
+          )}
+
+          {i === "g" && (
+            <div
+              className="flex items-center justify-center gap-3 text-3xl font-semibold"
+              style={{ fontFamily: "Momo Trust Display" }}
             >
-              &
-            </span>
-            <h1
-              className="text-[#573A32]"
-              data-aos="fade-up"
-              data-aos-easing="ease-in-back"
-              data-aos-offset="0"
-            >
-              Shweta
-            </h1>
-          </div>
+              <h1
+                className="text-[#ac1b46]"
+                data-aos="fade-down"
+                data-aos-easing="ease-in-back"
+                data-aos-offset="0"
+              >
+                Shubham
+              </h1>
+              <span
+                className="text-[#ac1b46] inline-block"
+                data-aos="zoom-in"
+                data-aos-easing="ease-in-back"
+                data-aos-offset="0"
+              >
+                &
+              </span>
+              <h1
+                className="text-[#573A32]"
+                data-aos="fade-up"
+                data-aos-easing="ease-in-back"
+                data-aos-offset="0"
+              >
+                Shweta
+              </h1>
+            </div>
+          )}
         </div>
 
         <div className="relative mt-8 z-10 w-full" data-aos="zoom-in">
@@ -154,7 +188,7 @@ const InvitePage = ({ i }: { i: string }) => {
                   <>
                     <Link
                       href="tel:7499162533"
-                      className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
+                      className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600 col-span-2"
                     >
                       <span className="text-xs font-bold text-pink-500">
                         Vitthal Bhadre <br />
@@ -169,6 +203,15 @@ const InvitePage = ({ i }: { i: string }) => {
                         Vinay Bhadre <br />
                       </span>
                       9764796379
+                    </Link>
+                    <Link
+                      href="tel:9987912211"
+                      className="px-4 py-1 cursor-pointer rounded-md border border-pink-500 bg-pink-50 text-pink-500 hover:text-pink-600"
+                    >
+                      <span className="text-xs font-bold text-pink-500">
+                        Subhash Bhadre <br />
+                      </span>
+                      9987912211
                     </Link>
                   </>
                 )}
