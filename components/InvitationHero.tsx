@@ -32,7 +32,7 @@ function InvitationHero() {
           height={1000}
         />
         <p
-          className="text-center text-base text-[#ac1b46]"
+          className="text-center text-base text-pink-600 font-medium"
           data-aos="zoom-in"
           data-aos-easing="ease-in-sine"
         >
@@ -42,7 +42,7 @@ function InvitationHero() {
           <InviteMember />
         </Suspense>
         <FadeText
-          className="text-sm text-[#ac1b46]"
+          className="text-sm text-[#ac1b46]  -mb-2 font-medium"
           direction="up"
           framerProps={{
             show: { transition: { delay: 0.2 } },
@@ -50,7 +50,7 @@ function InvitationHero() {
           text="To our wedding"
         />
 
-        <div className="w-[280px] text-center text-base text-[#ac1b46] font-medium leading-6">
+        <div className="w-[280px] text-center text-base text-[#ac1b46] font-medium leading-6 -mt-1">
           <FadeText
             className="text-[15px] text-[#535220]k"
             direction="up"
@@ -61,11 +61,11 @@ function InvitationHero() {
           />
 
           <div
-            className="bg-pink-50 h-[78px] overflow-hidden py-3 border border-[#ac1b46] rounded-md mt-2 mb-3"
+            className="bg-gradient-to-br from-white to-pink-100 h-[78px] overflow-hidden py-3 border border-pink-400 rounded-md mt-2 mb-3"
             data-aos="flip-up"
           >
             <FadeText
-              className="text-base font-semibold text-[#ac1b46]"
+              className="text-base font-semibold text-pink-600"
               direction="up"
               framerProps={{
                 show: { transition: { delay: 1 } },
@@ -73,7 +73,7 @@ function InvitationHero() {
               text="November 22, Saturday, 2025"
             />
             <FadeText
-              className="font-bold text-[#ac1b46] text-sm mb-2"
+              className="font-bold text-pink-600 text-sm mb-2"
               direction="down"
               framerProps={{
                 show: { transition: { delay: 1 } },

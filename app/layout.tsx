@@ -1,4 +1,5 @@
 import type { Metadata } from "next"
+import Script from "next/script"
 import "./globals.css"
 import { AOSInit } from "@/components/Aos"
 
@@ -29,6 +30,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`antialiased`}>
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-PKBS7FCVK7"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-PKBS7FCVK7');
+          `}
+        </Script>
         <AOSInit />
         {children}
       </body>
