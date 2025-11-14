@@ -1,9 +1,10 @@
 "use client"
 import { motion } from "framer-motion"
-import { ExternalLink, Heart, MapPin, Navigation } from "lucide-react"
+import { ChevronDown, ExternalLink, Heart, MapPin, Navigation } from "lucide-react"
 import Image from "next/image"
 import Link from "next/link"
 import { useParams } from "next/navigation"
+import { useEffect, useState } from "react"
 import { AOSInit } from "@/components/Aos"
 import Divider from "@/components/Divider"
 import InvitationHero from "@/components/InvitationHero"
@@ -21,10 +22,70 @@ function page() {
 }
 
 const InvitePage = ({ i }: { i: string }) => {
+  const [showScrollIndicator, setShowScrollIndicator] = useState(true)
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 100) {
+        setShowScrollIndicator(false)
+      } else {
+        setShowScrollIndicator(true)
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll)
+    return () => window.removeEventListener("scroll", handleScroll)
+  }, [])
+
+  const scrollToContent = () => {
+    window.scrollTo({
+      top: window.innerHeight * 0.8,
+      behavior: "smooth",
+    })
+  }
+
   return (
     <>
       <AOSInit />
       <InvitationHero />
+      {/* Scroll Indicator */}
+      {showScrollIndicator && (
+        <motion.div
+          className="fixed bottom-8 right-1/2 translate-x-1/2 z-50 cursor-pointer"
+          onClick={scrollToContent}
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 2, duration: 0.5 }}
+        >
+          <motion.div
+            className="flex flex-col items-center gap-2"
+            animate={{
+              y: [0, 10, 0],
+            }}
+            transition={{
+              duration: 1.5,
+              repeat: Infinity,
+              ease: "easeInOut",
+            }}
+          >
+            <p className="text-xs text-[#ac1b46] font-medium whitespace-nowrap">
+              Scroll to explore
+            </p>
+            <motion.div
+              animate={{
+                y: [0, 8, 0],
+              }}
+              transition={{
+                duration: 1.2,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+            >
+              <ChevronDown className="w-6 h-6 text-[#ac1b46] drop-shadow-lg" />
+            </motion.div>
+          </motion.div>
+        </motion.div>
+      )}
       <section className="relative">
         <div className="bg-gradient-to-b from-[rgb(255_255_255)_24%] to-transparent absolute inset-0 top-0 z-10"></div>
         <div className="bg-gradient-to-t from-[rgb(255_255_255)_24%] to-transparent absolute inset-0 top-0 z-10"></div>
