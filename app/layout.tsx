@@ -3,8 +3,8 @@ import "./globals.css"
 import { AOSInit } from "@/components/Aos"
 
 export const metadata: Metadata = {
-  title: "Shubham & Shweta's Wedding",
-  description: "Shubham & Shweta's Wedding Invitation",
+  title: "Shweta & Shubham's Wedding",
+  description: "Shweta & Shubham's Wedding Invitation",
   icons: {
     icon: "/favicon.ico",
   },
