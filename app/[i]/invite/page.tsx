@@ -197,7 +197,7 @@ const InvitePage = ({ i }: { i: string }) => {
             data-aos="zoom-in"
             data-aos-easing="ease-in-sine"
           >
-            Sushila Mangal Karyalaya & Lawns, Limb Phata, <br />{" "}
+            Sushila Mangal Karyalaya <br /> & Lawns <br />{" "}
             <span className="text-xs font-medium">Talegaon Dabhade - 410507</span>
           </h2>
 
